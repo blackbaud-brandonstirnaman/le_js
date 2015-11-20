@@ -58,7 +58,13 @@
         /**
          * @const
          * @type {string} */
-        var _traceCode = options.trace ? (Math.random() + Math.PI).toString(36).substring(2, 10) : null;
+        var _traceCode;
+        if (typeof options.trace === 'string') {
+            _traceCode = options.trace;
+        }
+        else {
+            _traceCode = options.trace ? (Math.random() + Math.PI).toString(36).substring(2, 10) : null;
+        }
         /** @type {string} */
         var _pageInfo = options.page_info;
         /** @type {string} */
